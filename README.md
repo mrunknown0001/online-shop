@@ -1,24 +1,11 @@
-# README
+# Dependencies
+1. Ruby
+2. Gem
+3. Rake
+4. Rails
+5. mysql2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Links for tutorial/reviewer in installing Dependencies
+https://medium.com/ruby-on-rails-web-application-development/how-to-install-rubyonrails-on-windows-7-8-10-complete-tutorial-2017-fc95720ee059
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://www.digitalocean.com/community/tutorials/how-to-use-mysql-with-your-ruby-on-rails-application-on-ubuntu-14-04
