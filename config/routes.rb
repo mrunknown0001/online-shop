@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'user/index'
 	get '/', to: redirect('home/index')
+	get '/user/:id', to: 'user#show' 
   get 'home/index'
 
   get 'login/index'
