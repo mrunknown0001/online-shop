@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def index
+  	@users = User.all
   end
 
   def show
@@ -8,6 +9,11 @@ class UserController < ApplicationController
  
 
  def create
-
+ 	@user = User.new(params[':user'])
+ 	@user.firstname = params[:firstname]
+ 	@user.lastname = params[:lastname]
+ 	@user.email = params[:email]
+ 	@user.password = params[:password]
+ 	@user.save
  end
 end
