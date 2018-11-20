@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
+	root 'home#index'
+
   get 'user/index'
-	get '/', to: redirect('home/index')
-	get '/user/:id', to: 'user#show' 
-  get 'home/index'
 
-  get 'login/index'
-  post 'login/login'
+	get '/user/:id', to: 'user#show'
 
-  get 'register/index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'login/', to: 'login#index'
+
+  get 'register/', to: 'register#index'
+  
 end
