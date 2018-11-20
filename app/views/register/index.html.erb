@@ -4,7 +4,7 @@
 	<div class="col-md-4 offset-4 mt-5">
 		<h4 class="text-center">Registration</h4>
 		<form action="/user/create" method="POST" autocomplete="off">
-			<input type="hidden" name="authenticity_token" value="bL13x72pldyDD8bgtkjKQakJCpd4A8JdXGbfksxBDHdf1uC0kCMqe2tvVdUYfidJt0fj3ihC4NxiVHv8GVYxJA==" />
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div class="form-group">
 				<label for="firstname">Firstname</label>
 				<input type="text" name="firstname" id="firstname" class="form-control" placeholder="Enter Firstname" required="">

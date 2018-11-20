@@ -4,7 +4,7 @@
 	<div class="col-md-4 offset-4 mt-5">
 		<h4 class="text-center">Login Page</h4>
 		<form action="/login/login" method="POST" autocomplete="off">
-			<input type="hidden" name="authenticity_token" value="bL13x72pldyDD8bgtkjKQakJCpd4A8JdXGbfksxBDHdf1uC0kCMqe2tvVdUYfidJt0fj3ihC4NxiVHv8GVYxJA==" />
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 		  <div class="form-group">
 		    <label for="email">Email address:</label>
 		    <input type="email" name="email" class="form-control" id="email">

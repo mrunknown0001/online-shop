@@ -15,5 +15,7 @@ class UserController < ApplicationController
  	@user.email = params[:email]
  	@user.password = params[:password]
  	@user.save
+
+ 	redirect_to "/users"
  end
 end
