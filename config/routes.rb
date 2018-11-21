@@ -4,19 +4,38 @@ Rails.application.routes.draw do
 
   get '/login', to: 'login#index'
 
+  post '/login', to: 'login#login'
+
   get '/register', to: 'register#index'
+
+
+
 
   #admin pages
   get '/admin', to: 'admin#index'
 
+  get '/admin/shop', to: 'admin#shop'
+
   get '/admin/products', to: 'product#index'
 
-  get 'admin/product/add', to: 'product#create'
+  get '/admin/product/add', to: 'product#create'
+
+  post '/admin/product/add', to: 'product#add'
+
+  get '/admin/product/delete/:id', to: 'product#destroy'
+
+  get '/admin/customers', to: 'admin#customers'
+
+  get '/admin/customer/delete/:id', to: 'user#destroy'
+
+
 
 
   #customer pages
   get '/u/dashboard', to: 'customer#index'
   get '/u', to: redirect('/u/dashboard')
+
+  get '/u/shoppe', to: 'customer#shop'
 
 
 

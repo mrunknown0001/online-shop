@@ -18,4 +18,12 @@ class UserController < ApplicationController
 
  	redirect_to "/login"
  end
+
+ def destroy
+ 	@user = User.find(params[:id])
+ 	@user.destroy
+
+ 	redirect_to "/admin/customers"
+ end
+ 
 end

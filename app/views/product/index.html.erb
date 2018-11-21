@@ -1,11 +1,21 @@
 <%= render '/admin/includes/nav' %>
 
 <div class="row">
-	<div class="col-md-8 offset-2 mt-2">
-		<a href="/admin/product/add" class="btn btn-primary">Add New Product</a>
+	<div class="col-md-10 offset-1 mt-2">
+		<h4>Products</h4>
+		<a href="/admin/product/add" class="btn btn-primary btn-sm">Add New Product</a>
 
-		<div class="mt-2">
-			
+		<div class="row">
+		  <% @products.each do |prod| %>
+			  <div class="col-md-3 mt-2 text-center">
+			  	<img src="/images/image.jpg" class="img-thumbnail" width="100px">
+					<p>Name: <%= prod.name %><br>
+					Price: 	&#8369; <%= prod.price %><br>
+					Quantity: <%= prod.quantity %></p>
+					<a href="/admin/product/delete/<%= prod.id %>" class="btn btn-danger btn-sm">Delete</a>
+				</div>
+		  <% end %>
 		</div>
 	</div>
+
 </div>
