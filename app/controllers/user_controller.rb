@@ -16,6 +16,6 @@ class UserController < ApplicationController
  	@user.password = params[:password]
  	@user.save
 
- 	redirect_to "/users"
+ 	redirect_to "/login"
  end
 end

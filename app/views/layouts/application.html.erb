@@ -7,13 +7,14 @@
     <%= csp_meta_tag %>
     
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <%= yield %>
     </div>
     <script src="/js/jquery.js"></script>
