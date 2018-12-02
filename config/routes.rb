@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
 	root 'home#index'
 
-  get '/login', to: 'login#index'
+  get '/login', to: 'login#index', as: 'login'
 
   post '/login', to: 'login#login'
 
-  get '/register', to: 'register#index'
+  get '/register', to: 'register#index', as: 'register'
 
 
 

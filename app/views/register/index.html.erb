@@ -2,12 +2,14 @@
 
 <div class="row">
 	<div class="col-md-4 offset-4 mt-5">
+		<%= render '/includes/flash-message' %>
+		<%= @user.errors.full_messages.first if @user.errors.any? %>
 		<h4 class="text-center">Registration</h4>
 		<form action="/user/create" method="POST" autocomplete="off">
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div class="form-group">
 				<label for="firstname">Firstname</label>
-				<input type="text" name="firstname" id="firstname" class="form-control" placeholder="Enter Firstname" required="">
+				<input type="text" name="firstname" id="firstname" class="form-control" placeholder="Enter Firstname" >
 			</div>
 			<div class="form-group">
 				<label for="lastname">Lastname</label>
@@ -24,5 +26,9 @@
 		  <button type="submit" class="btn btn-success">Register</button>
 		  <a href="/" class="btn btn-danger">Cancel</a>
 		</form>
+		<br>
+		<p>
+			<a href="<%= login_path %>">Click Here to Login</a>
+		</p>
 	</div>
 </div>

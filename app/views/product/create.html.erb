@@ -2,6 +2,7 @@
 
 <div class="row">
 	<div class="col-md-10 offset-1 mt-2">
+		<%= render '/includes/flash-message' %>
 		<h4>New Product</h4>
 		<form action="/admin/product/add" method="POST" enctype="multipart/form-data" autocomplete="off">
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
