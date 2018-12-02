@@ -12,6 +12,7 @@
 		  </tr>
 		 
 		  <% @users.each do |user| %>
+		  	<% if user.email != 'admin@admin.com' %>
 		    <tr>
 		      <td class="text-center"><%= user.firstname %></td>
 		      <td class="text-center"><%= user.lastname %></td>
@@ -20,6 +21,7 @@
 		      	<a href="/admin/customer/delete/<%= user.id %>" class="btn btn-danger btn-sm">Delete</a>
 		      </td>
 		    </tr>
+			<% end %>
 		  <% end %>
 		</table>		
 	</div>

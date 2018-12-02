@@ -15,7 +15,7 @@ class UserController < ApplicationController
  	@user.firstname = params[:firstname]
  	@user.lastname = params[:lastname]
  	@user.email = params[:email]
- 	@user.password = params[:password]
+ 	@user.password_digest = params[:password]
  	
  	if @user.save
 		flash[:success] = "Registered Successfully!"

@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
 	root 'home#index'
+
+  # resources :users
+  # resources :sessions, only: [:new, :create, :destroy]
+
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   get '/login', to: 'login#index', as: 'login'
 
-  post '/login', to: 'login#login'
+  post '/login', to: 'sessions#create'
 
   get '/register', to: 'register#index', as: 'register'
 
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
 
 
   #admin pages
-  get '/admin', to: 'admin#index'
+  get '/admin', to: 'admin#index', as: 'admin_dashboard'
 
   get '/admin/shop', to: 'admin#shop'
 
@@ -35,7 +37,7 @@ Rails.application.routes.draw do
 
 
   #customer pages
-  get '/u/dashboard', to: 'customer#index'
+  get '/u/dashboard', to: 'customer#index', as: 'customer_dashboard'
   get '/u', to: redirect('/u/dashboard')
 
   get '/u/shoppe', to: 'customer#shop'
