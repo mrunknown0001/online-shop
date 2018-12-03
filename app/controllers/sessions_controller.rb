@@ -16,12 +16,14 @@ class SessionsController < ApplicationController
     else
       # flash.now[:alert] = "Email or password is invalid"
       # render "new"
-      redirect_to login_url, notice: "Email or Password is invalid!";
+      flash[:danger] = "Invalid Email Address or Password"
+      redirect_to login_url
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_url, notice: "Logged out!"
+    flash[:success] = "Logged Out!"
+    redirect_to login_url
   end
 end

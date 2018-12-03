@@ -3,6 +3,10 @@ class CustomerController < ApplicationController
 	end
 
 	def index
+		if !session[:user_id]
+				flash[:danger] = "Login First"
+	  		redirect_to login_path
+	  end
 	end
 
 	def shop
