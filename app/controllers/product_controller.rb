@@ -13,7 +13,15 @@ class ProductController < ApplicationController
 	 	@prod.description = params[:description]
 	 	@prod.price = params[:price]
 	 	@prod.quantity = params[:quantity]
+
+		uploaded_io = params[:image]
+    	File.open(Rails.root.join('public', 'images',uploaded_io.original_filename), 'wb') do |file|
+		file.write(uploaded_io.read)
+		end
+
+		@prod.image = uploaded_io.original_filename
 	 	@prod.save
+
 
 		flash[:success] = "Product Added!"
 	 	redirect_to "/admin/product/add"

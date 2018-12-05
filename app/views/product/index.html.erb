@@ -8,7 +8,7 @@
 		<div class="row">
 		  <% @products.each do |prod| %>
 			  <div class="col-md-3 mt-2 text-center">
-			  	<img src="/images/image.jpg" class="img-thumbnail" width="100px">
+			  	<img src="/images/<%= prod.image %>" class="img-thumbnail" width="100px">
 					<p>Product: <%= prod.name %><br>
 					Price: 	&#8369; <%= prod.price %><br>
 					Quantity: <%= prod.quantity %></p>
