@@ -1,7 +1,7 @@
-<%= render '/customer/includes/nav' %>
+<%= render '/admin/includes/nav' %>
 
 <div class="row">
-	<div class="col-md-10 offset-1 mt-5">
+	<div class="col-md-10 offset-1 mt-2">
 		<h4>Payments</h4>
 		<%= render '/includes/flash-message' %>
 		<table class="table table-bordered table-hover table-striped">
@@ -14,7 +14,6 @@
 			 </thead>
 			 <tbody>
 			  <% @payments.each do |payment| %>
-			  	<% if payment.user_id == session[:user_id] %>
 				    <tr>
 				      <td class="text-center"><%= payment.user %></td>
 				      <td class="text-center"><%= payment.product %></td>
@@ -22,9 +21,12 @@
 				      	<%= payment.payment %>
 				      </td>
 				    </tr>
-				 <% end %>
 			  <% end %>
-			</tbody>
-		</table>	
+			 </tbody>
+
+		</table>
+		
 	</div>
+
+
 </div>

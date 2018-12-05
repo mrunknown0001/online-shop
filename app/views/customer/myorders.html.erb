@@ -3,13 +3,29 @@
 <div class="row">
 	<div class="col-md-10 offset-1 mt-5">
 		<h4>My Orders</h4>
+		<%= render '/includes/flash-message' %>
 	</div>
 	<% @orders.each do |order| %>
-		<div class="col-md-4 mt-1 text-center">
-			<img src="/images/image.jpg" class="img-thumbnail" width="150px">
-			<h4>Product: <%= order.product_id %></h4>
-			<p>Total: <%= order.total %></p>
-			<a href="">Pay</a>
-		</div>
+		<% if order.user_id == session[:user_id] %>
+			<div class="col-md-4 mt-1 text-center">
+				<img src="/images/image.jpg" class="img-thumbnail" width="150px">
+				<h4>Product: <%= order.product_name %></h4>
+				<p>Total: <%= order.total %></p>
+				<p>Remarks: <%= order.remarks %></p>
+
+				<% if order.remarks != "Paid" %>
+					<form action="/u/order/pay" method="post" autocomplete="off">
+						<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+						<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+						<input type="hidden" name="id" value="<%= order.id %>">
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">Pay</button>
+						</div>
+					</form>
+				<% end %>
+			</div>
+		<% end %>
+
 	<% end %>
 </div>

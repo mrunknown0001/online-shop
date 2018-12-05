@@ -17,4 +17,8 @@ class AdminController < ApplicationController
 		@orders = Order.all
 	end
 
+	def payments
+		@payments = Payment.all
+	end
+
 end

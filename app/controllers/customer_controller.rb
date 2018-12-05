@@ -22,10 +22,33 @@ class CustomerController < ApplicationController
 	end
 
 	def payments
-
+		@payments = Payment.all
 	end
 
 	def myorders
 		@orders = Order.all
+	end
+
+	def payOrder
+		@user = User.find(params[:user_id])
+
+		@order = Order.find(params[:id])
+		@order.remarks = 'Paid'
+		@order.save
+
+		@product = Product.find(@order.product_id)
+		@product.quantity = @product.quantity - @order.product_quantity
+		@product.save
+
+		@payment = Payment.new(params[:payment])
+		@payment.user_id = @user.id
+		@payment.user = @user.firstname + ' ' + @user.lastname
+		@payment.product = @order.product_name
+		@payment.payment = @order.total
+		@payment.save
+
+		flash[:success] = "Payment Successful"
+
+		redirect_to "/u/myOrders"
 	end
 end

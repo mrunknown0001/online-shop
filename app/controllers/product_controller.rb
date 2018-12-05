@@ -15,6 +15,7 @@ class ProductController < ApplicationController
 	 	@prod.quantity = params[:quantity]
 	 	@prod.save
 
+		flash[:success] = "Product Added!"
 	 	redirect_to "/admin/product/add"
 	end
 
@@ -22,6 +23,8 @@ class ProductController < ApplicationController
 		@prod = Product.find(params[:id])
 
 		@prod.destroy
+
+		flash[:success] = "Product Deleted!"
 
 		redirect_to "/admin/products"
 	end

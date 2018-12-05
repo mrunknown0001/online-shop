@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get '/admin/orders', to: 'admin#orders'
 
+  get '/admin/payments', to: 'admin#payments'
+
   get '/admin/customers', to: 'admin#customers'
 
   get '/admin/customer/delete/:id', to: 'user#destroy'
@@ -49,6 +51,8 @@ Rails.application.routes.draw do
   post '/u/place/order', to: 'order#place'
 
   get '/u/myOrders', to: 'customer#myorders'
+
+  post '/u/order/pay', to: 'customer#payOrder'
 
   get '/u/payments', to: 'customer#payments'
 

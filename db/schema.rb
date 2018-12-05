@@ -13,7 +13,10 @@
 ActiveRecord::Schema.define(version: 2018_12_03_234802) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "user"
     t.integer "product_id"
+    t.string "product_name"
     t.integer "product_quantity"
     t.float "product_price"
     t.float "total"
@@ -24,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_234802) do
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
+    t.string "user"
+    t.string "product"
     t.string "payment_reference"
     t.float "payment"
     t.text "notes"
@@ -36,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_234802) do
     t.text "description"
     t.float "price"
     t.integer "quantity"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
