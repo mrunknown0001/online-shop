@@ -1,1 +1,20 @@
 <%= render '/customer/includes/nav' %>
+
+<div class="row">
+	<div class="col-md-10 offset-1 mt-5">
+		<h4>Products</h4>
+
+		<div class="row">
+		  <% @products.each do |prod| %>
+			  <div class="col-md-3 mt-1 text-center">
+			  	<img src="/images/image.jpg" class="img-thumbnail" width="100px">
+					<p>Name: <%= prod.name %><br>
+					Price: 	&#8369; <%= prod.price %><br>
+					Quantity: <%= prod.quantity %></p>
+					<a href="/u/buy/product/<%= prod.id %>" class="btn btn-success btn-sm">Buy</a>
+				</div>
+		  <% end %>
+		</div>
+	</div>
+
+</div>

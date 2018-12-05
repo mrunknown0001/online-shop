@@ -10,5 +10,22 @@ class CustomerController < ApplicationController
 	end
 
 	def shop
+		@products = Product.all
+	end
+
+	def buy
+		@product = Product.find(params[:id])
+	end
+
+	def placeorder
+
+	end
+
+	def payments
+
+	end
+
+	def myorders
+		@orders = Order.all
 	end
 end

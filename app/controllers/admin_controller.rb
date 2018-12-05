@@ -13,4 +13,8 @@ class AdminController < ApplicationController
 		@users = User.all
 	end
 
+	def orders
+		@orders = Order.all
+	end
+
 end

@@ -1,0 +1,15 @@
+<%= render '/customer/includes/nav' %>
+
+<div class="row">
+	<div class="col-md-10 offset-1 mt-5">
+		<h4>My Orders</h4>
+	</div>
+	<% @orders.each do |order| %>
+		<div class="col-md-4 mt-1 text-center">
+			<img src="/images/image.jpg" class="img-thumbnail" width="150px">
+			<h4>Product: <%= order.product_id %></h4>
+			<p>Total: <%= order.total %></p>
+			<a href="">Pay</a>
+		</div>
+	<% end %>
+</div>

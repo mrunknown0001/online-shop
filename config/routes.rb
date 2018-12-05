@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get '/admin/product/delete/:id', to: 'product#destroy'
 
+  get '/admin/orders', to: 'admin#orders'
+
   get '/admin/customers', to: 'admin#customers'
 
   get '/admin/customer/delete/:id', to: 'user#destroy'
@@ -42,6 +44,13 @@ Rails.application.routes.draw do
 
   get '/u/shoppe', to: 'customer#shop'
 
+  get '/u/buy/product/:id', to: 'customer#buy'
+
+  post '/u/place/order', to: 'order#place'
+
+  get '/u/myOrders', to: 'customer#myorders'
+
+  get '/u/payments', to: 'customer#payments'
 
 
 
